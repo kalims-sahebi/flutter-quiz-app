@@ -3,9 +3,22 @@ import 'package:flutter_quiz_app/first_screen.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
+    MaterialApp(
       home: Scaffold(
-        body: FirstScreen(),
+        body: Container(
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 230, 226, 2),
+                Color.fromARGB(255, 5, 182, 49),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: const FirstScreen(),
+        ),
       ),
     ),
   );
