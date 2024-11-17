@@ -5,13 +5,14 @@ import 'package:flutter_quiz_app/questions_summary/questions_summary.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({
-    super.key,
-    required this.chosenAnswers,
-    required this.onRestart,
-  });
+  const ResultsScreen(
+      {super.key,
+      required this.chosenAnswers,
+      required this.onRestart,
+      required this.onMainMenu});
 
   final void Function() onRestart;
+  final void Function() onMainMenu;
   final List<String> chosenAnswers;
 
   List<Map<String, Object>> get summaryData {
@@ -70,6 +71,14 @@ class ResultsScreen extends StatelessWidget {
               ),
               icon: const Icon(Icons.refresh),
               label: const Text('Restart Quiz!'),
+            ),
+            TextButton.icon(
+              onPressed: onMainMenu,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+              icon: const Icon(Icons.home),
+              label: const Text('Back to home'),
             )
           ],
         ),
